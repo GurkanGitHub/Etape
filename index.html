@@ -1,0 +1,777 @@
+<html lang="fr-FR">
+
+<head>
+    <title>L'ETAPE</title>
+    <style>
+        #mainBody {
+            margin: 2px 50px 2px 50px;
+            line-height: 36px;
+            font-family: 'Calibri';
+            font-size: normal;
+        }
+
+        hr {
+            margin: 0px 20px 0px 20px;
+        }
+
+        h1 {
+            color: rgb(29, 31, 29);
+            font-family: Calibri;
+            font-style: normal;
+            font-size: x-large;
+            text-align: center;
+            border: rgb(246, 95, 65);
+            background-color: rgb(246, 95, 65);
+            border-radius: 18px;
+            width: 1000px;
+            height: 45px;
+        }
+
+        h2 {
+            color: black;
+            font-family: Calibri;
+        }
+
+        p {
+            font-weight: normal;
+            font-family: Calibri;
+        }
+
+        #general {
+            border: black;
+            /* background-color:#e6ffff; */
+            text-align: left;
+            border-radius: 10px;
+            -webkit-box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.19);
+            -moz-box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.19);
+            box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.19);
+
+        }
+
+        input {
+            font-size: medium;
+            font-weight: bold;
+            color: rgb(50, 53, 49);
+        }
+
+        input[list=dispositif] {
+            width: 60%;
+            height: 4%;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        input[list=site] {
+            width: 20%;
+            height: 4%;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        input[list=usagers] {
+            width: 25%;
+            height: 4%;
+        }
+
+        #surveySel {
+            text-align: center;
+            align-items: center;
+            box-sizing: content-box;
+            border-radius: 10px;
+            -webkit-box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.19);
+            -moz-box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.19);
+            box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.19);
+        }
+
+        input[button=boton] {
+            border-style: rounded;
+        }
+
+        .boton {
+            font-size: large;
+            margin-inline: 5px;
+            margin-top: 30px;
+            margin-bottom: -20px;
+            min-width: 20%;
+        }
+
+        #footer {
+            border: 1px;
+            text-align: left;
+            background-color: rgb(238, 212, 203);
+            color: blue;
+            font-family: Calibri;
+            font-size: 11;
+            line-height: 80%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</head>
+
+
+<body id="mainBody">
+
+    <center><img src="https://www.letape-emploi.fr/wp-content/uploads/2020/07/LETAPE-e1594986728166.jpg" , alt="L'etape"
+            , width="200" , height="auto" , #border="1px"></center>
+    <br>
+    <center>
+        <div class="alert alert-info">
+            <span style="font-size: 24px;font-weight: 700;">Fiche de recueil d’appréciations et de réclamations de fin
+                de prestation</span>
+        </div>
+    </center>
+    <p>Vous avez financé ou cofinancé une prestation réalisée par L’ÉTAPE.<br>
+        Dans une logique d’amélioration continue, nous vous remercions de bien vouloir remplir ce questionnaire.</p>
+
+
+    <form id="etapeSurvey" action="/" method="POST">
+
+        <div id="general">
+            <p style="height: 10px;"></p>
+            <div class="row" >
+                <div class=" col-sm-5 input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01" style="margin-left: 20px;">Dispositif</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01" name="dispositif" style="">
+                    <option value="" selected>Veuillez choisir votre dispositif</option>
+                    <option value="Remobilisation">Remobilisation</option>
+                    <option value="Garantie Departementale d'Activite (GAD)">Garantie Departementale d'Activite (GAD)
+                    </option>
+                    <option value="Primo insertion sociale">Primo insertion sociale</option>
+                    <option value="Primo insertion professionnelle">Primo insertion professionnelle</option>
+                    <option value="Actions courtes type 'marchons pour ... '">Actions courtes type 'marchons pour ... '
+                    </option>
+                    <option value="Formation civique OFII">Formation civique OFII</option>
+                    <option value="Jardins partages">Jardins partages</option>
+                    <option value="#avenir">#avenir</option>
+                    <option value="Accompagnement a la preparation de la VAE">Accompagnement a la preparation de la VAE
+                    </option>
+                    <option value="Bilan de competences">Bilan de competences</option>
+                    <option value="Reseau de soutien et de recherche d'emploi">Reseau de soutien et de recherche
+                        d'emploi</option>
+                    <option value="Prestations specifiques">Prestations specifiques</option>
+                    <option value="Accompagnement des porteurs de projets">Accompagnement des porteurs de projets
+                    </option>
+                    <option value="Formation des acteurs">Formation des acteurs</option>
+                    <option value="Interventions dans les centres de formation">Interventions dans les centres de
+                        formation</option>
+                    <option value="Interventions scolaires et universitaires">Interventions scolaires et universitaires
+                    </option>
+                </select>
+            </div>
+                <hr>
+
+            <div class =" col-sm-5 input-group mb-3">
+                <div class="input-group-prepend"  style="margin-left: 20px;">
+                    <label class="input-group-text" for="inputGroupSelect02">Site</label>
+                </div>
+
+                <select  class="custom-select" name="site" id="inputGroupSelect02">
+                    <option value="" selected>Veuillez choisir votre site de L’ÉTAPE</option>
+                    <option value="Vire">Vire</option>
+                    <option value="Caen">Caen</option>
+                    <option value="Flers">Flers</option>
+                    <option value="Bayeux">Bayeux</option>
+                    <option value="Falaise">Falaise</option>
+                    <option value="Conde-sur-Noireau">Conde-sur-Noireau</option>
+                    <option value="Argentan">Argentan</option>
+                    <option value="Carentan">Carentan</option>
+                    <option value="Saint-Lo">Saint-Lo</option>
+                    <option value="Coutances">Coutances</option>
+                    <option value="Avranches">Avranches</option>
+                    <option value="Mortain">Mortain</option>
+                    <option value="Domfront">Domfront</option>
+                    <option value="La Ferte-Mace">La Ferte-Mace</option>
+                </select>
+
+            </div>
+
+            </div>
+
+            <hr>
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="input-group mb-3" style = "margin-left: 20px";>
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Début</span>
+                      </div>
+                        <input class="form-control" type="date" id="debut" name="debut" >
+
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="input-group mb-3" style="margin-left:60px";>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon2">Fin</span>
+                        </div>
+                        <input class="form-control" type="date" id="end" name="fin">
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row">
+
+                <div class="col-5">
+                    <div class="input-group mb-3" style="margin-left:20px";>
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect03">Statue</label>
+                        </div>
+                        <select class="form-control" id="inputGroupSelect03" name="slct1" onchange="populate1('inputGroupSelect03', 'inputGroupSelect04')">
+                            <option value="" selected>Sélectionnez votre Statue</option>
+                            <option value="financeur">Financeur</option>
+                            <option value="intervenant">Intervenant</option>
+                            <option value="prescripteur">Prescripteur</option>
+                            <option value="beneficiaire">Beneficiaire</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="col-5">
+                    <div class="input-group mb-3" id="selectTwoDiv" style="display: none;margin-left: 60px;width: 75%;">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect04">Branche</label>
+                        </div>
+                        <select class="form-control" id="inputGroupSelect04" name="slct2" required>
+                            <option value="" selected>Sélectionnez votre branche</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <br>
+
+        </div>
+
+        <hr>
+        <br>
+
+        <div id="selectionDiv" style="display: none;">
+            <div id="surveySel">
+
+                <p id="surSel" name="surveySelection">
+                <div class="alert alert-info" id="botonF" style="display: none;">
+                    <span style="font-size: 24px;font-weight: 700;">
+                        Questionnaire de la Financeur
+                    </span>
+                </div>
+                <div class="alert alert-info" id="botonI" style="display: none;">
+                    <span style="font-size: 24px;font-weight: 700;">
+                        Questionnaire de l’Intervenant(e)
+                    </span>
+                </div>
+                <div class="alert alert-info" id="botonP" style="display: none;">
+                    <span style="font-size: 24px;font-weight: 700;">
+                        Questionnaire du Prescripteur
+                    </span>
+                </div>
+                <div class="alert alert-info" id="botonB" style="display: none;">
+                    <span style="font-size: 24px;font-weight: 700;">
+                        Questionnaire de la Bénéficiaire
+                    </span>
+                </div>
+
+                </p>
+
+                <br>
+
+            <div style="text-align:left;margin-left: 70px;margin-top: 30px;">
+                <div id="fin" name="fin" style="display: none;">
+                    <h2>Finaceur questionnaire-Cochez la bonne réponse.</h2>
+                    <h3>Disponibilité et écoute de votre interlocuteur</h3>
+                    <input style="display: none;" type="radio" value="" id="fin10" name="fin1" checked>
+                    <input type="radio" value="Très satisfaisant" id="fin11" name="fin1">
+                    <label for="fin11">Très satisfaisant</label><br>
+                    <input type="radio" id="fin12" name="fin1">
+                    <label for="fin12">Satisfaisant</label><br>
+                    <input type="radio" id="fin13" name="fin1">
+                    <label for="fin13">Moyennement satisfaisant</label><br>
+                    <input type="radio" id="fin14" name="fin1">
+                    <label for="fin14">Pas satisfaisant</label><br>
+                    <input type="radio" id="fin15" name="fin1">
+                    <label for="fin15">Non concerné</label>
+
+                    <h3>Suivi administratif de la prestation (convention, attestations, facturation…)</h3>
+                    <input style="display: none;" type="radio" id="fin20" name="fin2" value="" checked>
+                    <input type="radio" id="fin21" name="fin2" value="Très satisfaisant">
+                    <label for="fin21">Très satisfaisant</label><br>
+                    <input type="radio" id="fin22" name="fin2" value="Satisfaisant">
+                    <label for="fin22">Satisfaisant</label><br>
+                    <input type="radio" id="fin23" name="fin2" value="Moyennement satisfaisant">
+                    <label for="fin23">Moyennement satisfaisant</label><br>
+                    <input type="radio" id="fin24" name="fin2" value="Pas satisfaisant">
+                    <label for="fin24">Pas satisfaisant</label><br>
+                    <input type="radio" id="fin25" name="fin2" value="Non concerné">
+                    <label for="fin25">Non concerné</label>
+
+                    <h3>Respect des engagements pris</h3>
+                    <input style="display: none;" type="radio" id="fin30" value="" name="fin3" checked>
+                    <input type="radio" id="fin31" name="fin3" value="Très satisfaisant">
+                    <label for="fin31">Très satisfaisant</label><br>
+                    <input type="radio" id="fin32" name="fin3" value="Satisfaisant">
+                    <label for="fin32">Satisfaisant</label><br>
+                    <input type="radio" id="fin33" name="fin3" value="Moyennement satisfaisant">
+                    <label for="fin33">Moyennement satisfaisant</label><br>
+                    <input type="radio" id="fin34" name="fin3" value="Pas satisfaisant">
+                    <label for="fin34">Pas satisfaisant</label><br>
+                    <input type="radio" id="fin35" name="fin3" value="Non concerné">
+                    <label for="fin35">Non concerné</label>
+
+                    <h3>Cohérence des objectifs et des contenus au regard de vos besoins</h3>
+                    <input style="display: none;" type="radio" id="fin40" value="" name="fin4" checked>
+                    <input type="radio" id="fin41" name="fin4" value="Très satisfaisant">
+                    <label for="fin41">Très satisfaisant</label><br>
+                    <input type="radio" id="fin42" name="fin4" value="Satisfaisant">
+                    <label for="fin42">Satisfaisant</label><br>
+                    <input type="radio" id="fin43" name="fin4" value="Moyennement satisfaisant">
+                    <label for="fin43">Moyennement satisfaisant</label><br>
+                    <input type="radio" id="fin44" name="fin4" value="Pas satisfaisant">
+                    <label for="fin44">Pas satisfaisant</label><br>
+                    <input type="radio" id="fin45" name="fin4" value="Non concerné">
+                    <label for="fin45">Non concerné</label>
+
+                    <h3>Supports et moyens pédagogiques mis en œuvre au regard de vos attentes</h3>
+                    <input style="display: none;" type="radio" id="fin50" value="" name="fin5" checked>
+                    <input type="radio" id="fin51" name="fin5" value="Très satisfaisant">
+                    <label for="fin51">Très satisfaisant</label><br>
+                    <input type="radio" id="fin52" name="fin5" value="Satisfaisant">
+                    <label for="fin52">Satisfaisant</label><br>
+                    <input type="radio" id="fin53" name="fin5" value="Moyennement satisfaisant">
+                    <label for="fin53">Moyennement satisfaisant</label><br>
+                    <input type="radio" id="fin54" name="fin5" value="Pas satisfaisant">
+                    <label for="fin54">Pas satisfaisant</label><br>
+                    <input type="radio" id="fin55" name="fin5" value="Non concerné">
+                    <label for="fin55">Non concerné</label>
+
+                </div>
+
+                <div id="int" name="int" style="display: none;margin-left: 20px;">
+                    <h2>Cochez la bonne réponse.</h2>
+                    <h3>Vous êtes intervenant(e):</h3>
+                    <input style="display: none;" type="radio" value="" name="intType" checked>
+                    <label for="intEx">extérieur</label>
+                    <input type="radio" id="intEx" name="intType" value="extérieur">
+                    <label for="intEt">Etape</label>
+                    <input type="radio" id="intEt" name="intType" value="Etape">
+
+                    <h3>Les objectifs de la formation ont-ils été atteints ?</h3>
+                    <input style="display: none;" type="radio" id="int10" value="" name="int1" checked>
+                    <input type="radio" id="int11" name="int1" value="Tout a fait">
+                    <label for="int11">Tout a fait</label><br>
+                    <input type="radio" id="int12" name="int1" value="Presque">
+                    <label for="int12">Presque</label><br>
+                    <input type="radio" id="int13" name="int1" value="Pas vraiment">
+                    <label for="int13">Pas vraiment</label><br>
+                    <input type="radio" id="int14" name="int1" value="Pas du tout">
+                    <label for="int14">Pas du tout</label>
+
+                    <h3>L’équipe a pu aborder l’ensemble des contenus du programme</h3>
+                    <input style="display: none;" type="radio" id="int20" value="" name="int2" checked>
+                    <input type="radio" id="int21" name="int2" value="Tout a fait">
+                    <label for="int21">Tout a fait</label><br>
+                    <input type="radio" id="int22" name="int2" value="Presque">
+                    <label for="int22">Presque</label><br>
+                    <input type="radio" id="int23" name="int2" value="Pas vraiment">
+                    <label for="int23">Pas vraiment</label><br>
+                    <input type="radio" id="int24" name="int2" value="Pas du tout">
+                    <label for="int24">Pas du tout</label>
+
+                    <h3>L’équipe a disposé des moyens matériels suffisants pour conduire la prestation</h3>
+                    <input style="display: none;" type="radio" id="int30" value="" name="int3" checked>
+                    <input type="radio" id="int31" name="int3" value="Tout a fait">
+                    <label for="int31">Tout a fait</label><br>
+                    <input type="radio" id="int32" name="int3" value="Presque">
+                    <label for="int32">Presque</label><br>
+                    <input type="radio" id="int33" name="int3" value="Pas vraiment">
+                    <label for="int33">Pas vraiment</label><br>
+                    <input type="radio" id="int34" name="int3" value="Pas du tout">
+                    <label for="int34">Pas du tout</label>
+
+                    <h3>L’équipe a eu accès à tous les documents administratifs et pédagogiques pour mener l’action</h3>
+                    <input style="display: none;" type="radio" id="int40" value="" name="int4" checked>
+                    <input type="radio" id="int41" name="int4" value="Tout a fait">
+                    <label for="int41">Tout a fait</label><br>
+                    <input type="radio" id="int42" name="int4" value="Presque">
+                    <label for="int42">Presque</label><br>
+                    <input type="radio" id="int43" name="int4" value="Pas vraiment">
+                    <label for="int43">Pas vraiment</label><br>
+                    <input type="radio" id="int44" name="int4" value="Pas du tout">
+                    <label for="int44">Pas du tout</label>
+
+                    <h3>Avez-vous réalisé tout ou une partie de la formation en distanciel?</h3>
+                    <input style="display: none;" type="radio" id="forDis" value="" name="forDis" checked>
+                    <label for="realY">Oui</label>
+                    <input type="radio" id="realY" name="forDis" value="Oui">
+                    <label for="realN">Non</label>
+                    <input type="radio" id="realN" name="forDis" value="Non">
+
+                    <h3>Si oui, Votre avis sur la réalisation de tout ou une partie de la prestation en distanciel</h3>
+                    <input style="display: none;" type="radio" id="int50" value="" name="int5" checked>
+                    <input type="radio" id="real51" name="int5" value="Très satisfaisant">
+                    <label for="real51">Très satisfaisant</label><br>
+                    <input type="radio" id="real52" name="int5" value="Satisfaisant">
+                    <label for="real52">Satisfaisant</label><br>
+                    <input type="radio" id="real53" name="int5" value="Moyennement satisfaisant">
+                    <label for="real53">Moyennement satisfaisant</label><br>
+                    <input type="radio" id="real54" name="int5" value="Insatisfaisant">
+                    <label for="real54">Insatisfaisant</label><br>
+
+                    <h3>L’équipe a repéré un ou plusieurs risques liés à la prestation</h3>
+                    <h3>Risques sociaux (incivilité, discrimination, agression, violence…)</h3>
+                    <input style="display: none;" type="radio" id="risqS" value="" name="risqS" checked>
+                    <label for="risqSY">Oui</label>
+                    <input type="radio" id="risqSY" name="risqS" value="Oui">
+                    <label for="risqSN">Non</label>
+                    <input type="radio" id="risqSN" name="risqS" value="Non">
+
+                    <h3>Risques hygiènes et sécurité des locaux (issue de secours, propreté des locaux…)</h3>
+                    <input style="display: none;" type="radio" id="risqH" value="" name="risqH" checked>
+                    <label for="risqHY">Oui</label>
+                    <input type="radio" id="risqHY" name="risqH" value="Oui">
+                    <label for="risqHN">Non</label>
+                    <input type="radio" id="risqHN" name="risqH" value="Non">
+
+                    <h3>Risques juridiques (non-respect des éléments contractuels, condition de la période d’immersion
+                        en entreprise…)</h3>
+                    <input style="display: none;" type="radio" id="risqJ" value="" name="risqJ" checked>
+                    <label for="risqJY">Oui</label>
+                    <input type="radio" id="risqJY" name="risqJ" value="Oui">
+                    <label for="risqJN">Non</label>
+                    <input type="radio" id="risqJN" name="risqJ" value="Non">
+
+                    <h3>Risques environnementaux (absence ou mauvaise gestion des déchets…)</h3>
+                    <input style="display: none;" type="radio" id="risqEn" value="" name="risqEn" checked>
+                    <label for="risqEnY">Oui</label>
+                    <input type="radio" id="risqEnY" name="risqEn" value="Oui">
+                    <label for="risqEnN">Non</label>
+                    <input type="radio" id="risqEnN" name="risqEn" value="Non">
+
+                    <h3>Risques économiques (effectif trop faible, absentéisme…)</h3>
+                    <input style="display: none;" type="radio" id="risqEc" value="" name="risqEc" checked>
+                    <label for="risqEcY">Oui</label>
+                    <input type="radio" id="risqEcY" name="risqEc" value="Oui">
+                    <label for="risqEcN">Non</label>
+                    <input type="radio" id="risqEcN" name="risqEc" value="Non">
+
+                </div>
+
+                <div id="pre" name="pre" style="display:none;">
+
+                    <label for="presWho" style="text-align: left;"><b>Vous êtes: (merci de choisir la case
+                            correspondante ou ecrire s'il n a pas de choix):</b> <br>
+                        <input list="usagers" id="presWho" name="usagers" /></label>
+                    <datalist id="usagers">
+                        <option value="" selected>Please select</option>
+                        <option value="Pôle Emploi">Pôle Emploi</option>
+                        <option value="Conseil départemental 14">Conseil départemental 14</option>
+                        <option value="Conseil départemental 50">Conseil départemental 50</option>
+                        <option value="Conseil départemental 61">Conseil départemental 61</option>
+                        <option value="Mission locale">Mission locale</option>
+                        <option value="Cap Emploi">Cap Emploi</option>
+                    </datalist>
+                    <br>
+                    <h2>Cochez la bonne réponse</h2>
+                    <h3>Accès aux informations en amont de la prestation</h3>
+                    <input style="display: none;" type="radio" id="pres10" value="" name="pres1" checked>
+                    <input type="radio" id="pres11" name="pres1" value="Très satisfaisant">
+                    <label for="pres11">Très satisfaisant</label><br>
+                    <input type="radio" id="pres12" name="pres1" value="Satisfaisant">
+                    <label for="pres12">Satisfaisant</label><br>
+                    <input type="radio" id="pres13" name="pres1" value="Moyennement satisfaisant">
+                    <label for="pres13">Moyennement satisfaisant</label><br>
+                    <input type="radio" id="pres14" name="pres1" value="Pas satisfaisant">
+                    <label for="pres14">Pas satisfaisant</label><br>
+                    <input type="radio" id="pres15" name="pres1" value="Non concerné">
+                    <label for="pres15">Non concerné</label>
+
+
+                    <h3>Délais de traitement de votre prescription</h3>
+                    <input style="display: none;" type="radio" id="pres20" value="" name="pres2" checked>
+                    <input type="radio" id="pres21" name="pres2" value="Très satisfaisant">
+                    <label for="pres21">Très satisfaisant</label><br>
+                    <input type="radio" id="pres22" name="pres2" value="Satisfaisant">
+                    <label for="pres22">Satisfaisant</label><br>
+                    <input type="radio" id="pres23" name="pres2" value="Moyennement satisfaisant">
+                    <label for="pres23">Moyennement satisfaisant</label><br>
+                    <input type="radio" id="pres24" name="pres2" value="Pas satisfaisant">
+                    <label for="pres24">Pas satisfaisant</label><br>
+                    <input type="radio" id="pres25" name="pres2" value="Non concerné">
+                    <label for="pres25">Non concerné</label>
+
+                    <h3>Organisation du recrutement</h3>
+                    <input style="display: none;" type="radio" id="pres30" value="" name="pres3" checked>
+                    <input type="radio" id="pres31" name="pres3" value="Très satisfaisant">
+                    <label for="pres31">Très satisfaisant</label><br>
+                    <input type="radio" id="pres32" name="pres3" value="Satisfaisant">
+                    <label for="pres32">Satisfaisant</label><br>
+                    <input type="radio" id="pres33" name="pres3" value="Moyennement satisfaisant">
+                    <label for="pres33">Moyennement satisfaisant</label><br>
+                    <input type="radio" id="pres34" name="pres3" value="Pas satisfaisant">
+                    <label for="pres34">Pas satisfaisant</label><br>
+                    <input type="radio" id="pres35" name="pres3" value="Non concerné">
+                    <label for="pres35">Non concerné</label>
+
+                    <h3>Échanges durant la prestation</h3>
+                    <input style="display: none;" type="radio" id="pres40" value="" name="pres4" checked>
+                    <input type="radio" id="pres41" name="pres4" value="Très satisfaisant">
+                    <label for="pres41">Très satisfaisant</label><br>
+                    <input type="radio" id="pres42" name="pres4" value="Satisfaisant">
+                    <label for="pres42">Satisfaisant</label><br>
+                    <input type="radio" id="pres43" name="pres4" value="Moyennement satisfaisant">
+                    <label for="pres43">Moyennement satisfaisant</label><br>
+                    <input type="radio" id="pres44" name="pres4" value="Pas satisfaisant">
+                    <label for="pres44">Pas satisfaisant</label><br>
+                    <input type="radio" id="pres45" name="pres4" value="Non concerné">
+                    <label for="pres45">Non concerné</label>
+
+                    <h3>Forme et contenu de la restitution de fin de prestation</h3>
+                    <input style="display: none;" type="radio" id="pres50" value="" name="pres5" checked>
+                    <input type="radio" id="pres51" name="pres5" value="Très satisfaisant">
+                    <label for="pres51">Très satisfaisant</label><br>
+                    <input type="radio" id="pres52" name="pres5" value="Satisfaisant">
+                    <label for="pres52">Satisfaisant</label><br>
+                    <input type="radio" id="pres53" name="pres5" value="Moyennement satisfaisant">
+                    <label for="pres53">Moyennement satisfaisant</label><br>
+                    <input type="radio" id="pres54" name="pres5" value="Pas satisfaisant">
+                    <label for="pres54">Pas satisfaisant</label><br>
+                    <input type="radio" id="pres55" name="pres5" value="Non concerné">
+                    <label for="pres55">Non concerné</label>
+
+                    <h3>Degré de réalisation des objectifs de la prestation</h3>
+                    <input style="display: none;" type="radio" id="pres60" value="" name="pres6" checked>
+                    <input type="radio" id="pres61" name="pres6" value="Très satisfaisant">
+                    <label for="pres61">Très satisfaisant</label><br>
+                    <input type="radio" id="pres62" name="pres6" value="Satisfaisant">
+                    <label for="pres62">Satisfaisant</label><br>
+                    <input type="radio" id="pres63" name="pres6" value="Moyennement satisfaisant">
+                    <label for="pres63">Moyennement satisfaisant</label><br>
+                    <input type="radio" id="pres64" name="pres6" value="Pas satisfaisant">
+                    <label for="pres64">Pas satisfaisant</label><br>
+                    <input type="radio" id="pres65" name="pres6" value="Non concerné">
+                    <label for="pres65">Non concerné</label>
+
+                </div>
+
+                <div id="ben" name="ben" style="display:none;">
+
+                    <h2>Cochez la bonne réponse.</h2>
+                    <h3>Au retour de la prestation / formation;</h3>
+                    <h3>La cohérence de cette formation/prestation par rapport à vos besoins?</h3>
+                    <input style="display: none;" type="radio" id="ben10" value="" name="ben1" checked>
+                    <input type="radio" id="ben11" name="ben1" value="Très satisfaisant">
+                    <label for="ben11">Très satisfaisant</label><br>
+                    <input type="radio" id="ben12" name="ben1" value="Satisfaisant">
+                    <label for="ben12">Satisfaisant</label><br>
+                    <input type="radio" id="ben13" name="ben1" value="Peu satisfaisant">
+                    <label for="ben13">Peu satisfaisant</label><br>
+                    <input type="radio" id="ben14" name="ben1" value="Pas du tout satisfaisant">
+                    <label for="ben14">Pas du tout satisfaisant</label>
+
+
+                    <h3>2 - La conformité des contenus de cette formation par rapport au descriptif annoncé ?</h3>
+                    <input style="display: none;" type="radio" id="ben20" value="" name="ben2" checked>
+                    <input type="radio" id="ben21" name="ben2" value="Très satisfaisant">
+                    <label for="ben21">Très satisfaisant</label><br>
+                    <input type="radio" id="ben22" name="ben2" value="Satisfaisant">
+                    <label for="ben22">Satisfaisant</label><br>
+                    <input type="radio" id="ben23" name="ben2" value="Peu satisfaisant">
+                    <label for="ben23">Peu satisfaisant</label><br>
+                    <input type="radio" id="ben24" name="ben2" value="Pas du tout satisfaisant">
+                    <label for="ben24">Pas du tout satisfaisant</label>
+
+
+                    <h3>3 - Les moyens mis à votre disposition étaient-ils satisfaisants ?</h3>
+                    <input style="display: none;" type="radio" id="ben30" value="" name="ben3" checked>
+                    <input type="radio" id="ben31" name="ben3" value="Très satisfaisant">
+                    <label for="ben31">Très satisfaisant</label><br>
+                    <input type="radio" id="ben32" name="ben3" value="Satisfaisant">
+                    <label for="ben32">Satisfaisant</label><br>
+                    <input type="radio" id="ben33" name="ben3" value="Peu satisfaisant">
+                    <label for="ben33">Peu satisfaisant</label><br>
+                    <input type="radio" id="ben34" name="ben3" value="Pas du tout satisfaisant">
+                    <label for="ben34">Pas du tout satisfaisant</label>
+
+                    <h3>4 - Etes-vous satisfait-e de la fréquence des contacts avec le-la référent-e L’Étape ?</h3>
+                    <input style="display: none;" type="radio" id="ben40" value="" name="ben4" checked>
+                    <input type="radio" id="ben41" name="ben4" value="Très satisfaisant">
+                    <label for="ben41">Très satisfaisant</label><br>
+                    <input type="radio" id="ben42" name="ben4" value="Satisfaisant">
+                    <label for="ben42">Satisfaisant</label><br>
+                    <input type="radio" id="ben43" name="ben4" value="Peu satisfaisant">
+                    <label for="ben43">Peu satisfaisant</label><br>
+                    <input type="radio" id="ben44" name="ben4" value="Pas du tout satisfaisant">
+                    <label for="ben44">Pas du tout satisfaisant</label>
+
+                    <h3>5 - Votre objectif a-t-il été atteint ?</h3>
+                    <input style="display: none;" type="radio" id="ben50" value="" name="ben5" checked>
+                    <input type="radio" id="ben51" name="ben5" value="Très satisfaisant">
+                    <label for="ben51">Très satisfaisant</label><br>
+                    <input type="radio" id="ben52" name="ben5" value="Satisfaisant">
+                    <label for="ben52">Satisfaisant</label><br>
+                    <input type="radio" id="ben53" name="ben5" value="Peu satisfaisant">
+                    <label for="ben53">Peu satisfaisant</label><br>
+                    <input type="radio" id="ben54" name="ben5" value="Pas du tout satisfaisant">
+                    <label for="ben54">Pas du tout satisfaisant</label>
+
+
+                    <h3>6 - Etes-vous satisfait-e de l’action mise en place ?</h3>
+                    <input style="display: none;" type="radio" id="ben60" value="" name="ben6" checked>
+                    <input type="radio" id="ben61" name="ben6" value="Très satisfaisant">
+                    <label for="ben61">Très satisfaisant</label><br>
+                    <input type="radio" id="ben62" name="ben6" value="Satisfaisant">
+                    <label for="ben62">Satisfaisant</label><br>
+                    <input type="radio" id="ben63" name="ben6" value="Peu satisfaisant">
+                    <label for="ben63">Peu satisfaisant</label><br>
+                    <input type="radio" id="ben64" name="ben6" value="Pas du tout satisfaisant">
+                    <label for="ben64">Pas du tout satisfaisant</label>
+
+                    <h3>7 - Si vous êtes en situation de handicap, votre handicap a-t-il été pris en compte ?</h3>
+                    <input style="display: none;" type="radio" id="ben70" value="" name="ben7" checked>
+                    <input type="radio" id="ben71" name="ben7" value="Très satisfaisant">
+                    <label for="ben71">Très satisfaisant</label><br>
+                    <input type="radio" id="ben72" name="ben7" value="Satisfaisant">
+                    <label for="ben72">Satisfaisant</label><br>
+                    <input type="radio" id="ben73" name="ben7" value="Peu satisfaisant">
+                    <label for="ben73">Peu satisfaisant</label><br>
+                    <input type="radio" id="ben74" name="ben7" value="Pas du tout satisfaisant">
+                    <label for="ben74">Pas du tout satisfaisant</label><br>
+
+                </div>
+
+            </div>
+
+        </div>
+       
+        <div class="row" id="comment">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+                <p for="comments">Quels sont vos commentaires?</p>
+                <textarea name="comments" id="comments" cols="40" rows="5"></textarea><br>
+            </div>
+            <div class="col-sm-5">
+                <p for="feedback">Propositions d’améliorations:</p>
+                <textarea name="feedback" id="feedback" cols="40" rows="5"></textarea><br>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+
+        <div id="soumettre" style="text-align: right;">
+            <hr>
+            <label for="submit" lang="fr">Si vous avez fini cliquez s'il vous plait le button "Soumettre"</label>
+            <input type="submit" id="submit" value="Soumettre">
+        </div>
+
+    </form>
+
+    <hr>
+
+    <div class="alert alert-info ">
+        <input type="image" id="address" alt="Address" width="20" height="20"
+            src="https://image.flaticon.com/icons/png/128/2891/2891415.png">
+        <label for="address">Siège : 2, rue de la Monderie 14500 Vire Normandie</label><br>
+        <input type="image" id="tel" width="20" height="20" alt="tel"
+            src="https://image.flaticon.com/icons/png/128/2934/2934394.png">
+        <label for="tel">02 31 68 88 65 </label><br>
+        <input type="image" id="email" width="20" height="20" alt="email"
+            src="https://image.flaticon.com/icons/png/128/1034/1034146.png">
+        <label for="email">letape-vire@letape-emploi.fr</label><br>
+        <input type="image" id="web" width="20" height="20" alt="website"
+            src="https://image.flaticon.com/icons/png/128/2301/2301129.png">
+        <label for="web">www.letape-emploi.fr</label><br>
+        <input type="image" id="facebook" alt="facebook" width="20" height="20"
+            src="https://www.letape-emploi.fr/wp-content/uploads/2020/07/Facebook-1.png">
+        <label for="facebook">https://www.facebook.com/LEtapeEmploi/</label><br>
+        <input type="image" id="twitter" alt="twitter" width="20" height="20"
+            src="https://www.letape-emploi.fr/wp-content/uploads/2020/07/Twitter-1.png">
+        <label for="twitter">https://twitter.com/l_etape</label><br>
+        <input type="image" id="linked" alt="linked" width="20" height="20"
+            src="https://www.letape-emploi.fr/wp-content/uploads/2020/07/Linkedin-1.png">
+        <label for="linked">https://www.linkedin.com/company/association-l-étape</label><br>
+        <input type="image" id="quali" alt="Qualiopi" width="470" height="80"
+            src="https://www.letape-emploi.fr/wp-content/uploads/2021/01/Qualiopi-logo.png">
+
+    </div>
+    <p>Mis à jour le 16/03/2021</p>
+
+
+
+
+    <script type="text/javascript">
+
+
+        function populate1(s1, s2) {
+            document.getElementById("selectionDiv").style.display = "block"
+            
+            document.getElementById("selectTwoDiv").style.display = "block";
+            var s1 = document.getElementById(s1);
+            var s2 = document.getElementById(s2);
+            s2.innerHTML = "";
+            if (s1.value == "financeur") {
+                var optionArray = ["|", "financeur|Financeur", "financeur_FSE|Financeur_FSE", "financeur_BC_CPF|Financeur_BC_CPF"];
+                document.getElementById("fin").style.display = "block"
+                document.getElementById("int").style.display = "none";
+                document.getElementById("pre").style.display = "none";
+                document.getElementById("ben").style.display = "none";
+
+                document.getElementById("botonF").style.display = "block"
+                document.getElementById("botonI").style.display = "none";
+                document.getElementById("botonP").style.display = "none";
+                document.getElementById("botonB").style.display = "none";
+
+
+            } else if (s1.value == "intervenant") {
+                var optionArray = ["|", "intervenant|Intervenant", "intervenant_FSE|Intervenant_FSE"];
+                document.getElementById("int").style.display = "block"
+                document.getElementById("fin").style.display = "none";
+                document.getElementById("pre").style.display = "none";
+                document.getElementById("ben").style.display = "none";
+
+                document.getElementById("botonF").style.display = "none"
+                document.getElementById("botonI").style.display = "block";
+                document.getElementById("botonP").style.display = "none";
+                document.getElementById("botonB").style.display = "none";
+            } else if (s1.value == "prescripteur") {
+                var optionArray = ["|", "prescripteur|Prescripteur", "prescripteur_FSE|Prescripteur_FSE", "prescripteur_BC|Prescripteur_BC"];
+                document.getElementById("fin").style.display = "none";
+                document.getElementById("int").style.display = "none";
+                document.getElementById("pre").style.display = "block";
+                document.getElementById("ben").style.display = "none";
+
+                document.getElementById("botonF").style.display = "none"
+                document.getElementById("botonI").style.display = "none";
+                document.getElementById("botonP").style.display = "block";
+                document.getElementById("botonB").style.display = "none";
+            } else if (s1.value == "beneficiaire") {
+                var optionArray = ["|", "beneficiaire|Beneficiaire", "beneficiaire_FSE|Beneficiaire_FSE"];
+                document.getElementById("fin").style.display = "none";
+                document.getElementById("int").style.display = "none";
+                document.getElementById("pre").style.display = "none";
+                document.getElementById("ben").style.display = "block";
+
+                document.getElementById("botonF").style.display = "none"
+                document.getElementById("botonI").style.display = "none";
+                document.getElementById("botonP").style.display = "none";
+                document.getElementById("botonB").style.display = "block";
+
+            }
+            for (var option in optionArray) {
+                var pair = optionArray[option].split("|");
+                var newOption = document.createElement("option");
+                newOption.value = pair[0];
+                newOption.innerHTML = pair[1];
+                s2.options.add(newOption);
+            }
+        }
+    </script>
+    <br>
+
+</body>
+
+</html>
