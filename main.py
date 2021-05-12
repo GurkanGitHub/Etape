@@ -2,6 +2,7 @@ from flask import Flask, redirect, url_for, request,render_template
 from flask_mysqldb import MySQL
 
 app = Flask(__name__,template_folder="./")
+
 app.config['MYSQL_HOST'] = "localhost"
 app.config['MYSQL_USER'] = "root"
 app.config['MYSQL_PASSWORD'] = "Mysq2021*"
@@ -105,42 +106,19 @@ def main():
       print(_feedback)
 
       cur = mysql.connection.cursor()
-      # insert / delete/update, cur.execute("INSERT INTO ....")
+
+      cur.execute("INSERT INTO survey(dispositif, site, debut, fin, statue, branche, fin1, fin2, fin3, fin4,fin5,\
+          intType, inter1, inter2, inter3, inter4, intForDis, inter5, intRisqS, intRisqH, intRisqJ, intRisqEn, \
+          intRisqEc, preUsager, pre1, pre2, pre3, pre4, pre5, pre6, ben1, ben2, ben3, ben4, ben5, ben6, ben7, comment, proposition) \
+          VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s, %s, %s, %s, %s,\
+           %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",(_dispositif,_site,_debut,_fin, \
+            _slct1, _slct2,_fin1, _fin2, _fin3, _fin4, _fin5, _intType, _int1, _int2, _int3, _int4, _forDis,_int5, \
+            _risqS, _risqH, _risqJ, _risqEn, _risqEc,_usagers,_pres1, _pres2, _pres3, _pres4, _pres5, _pres6,_ben1, \
+            _ben2, _ben3, _ben4, _ben5, _ben6, _ben7, _comments, _comments));
 
       mysql.connection.commit()
       cur.close()
    return render_template("index.html")
-
-
-
-
-@app.route("/insert")
-def add(insert):
-    cur = mysql.connection.cursor()
-    cur.execute('''SELECT MAX(id) FROM survey''')
-    maxi = cur.fetchone()
-    cur.execute('''INSERT INTO survey (id, dispositif, site, debut, fin, statue, branche, fin1, fin2, fin3, fin4, 
-    fin5, fin_comment, fin_proposition, inter1, inter2, inter3, inter4, inter5, inter6, inter7, inter8, inter9, 
-    inter10, inter11, inter12, inter_comment, inter_proposition, pre1, pre2, pre3, pre4, pre5, pre6, pre7, 
-    pre_comment, pre_proposition, ben1, ben2, ben3, ben4, ben5, ben6, ben7, ben_comment, ben_proposition, 
-    register_date) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,
-     %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s )''',
-                (maxi[0] + 1, insert))
-    mysql.connection.commit()
-    return "done"
-
-
-
-@app.route("/getall")
-def getall():
-    cur = mysql.connection.cursor()
-    cur.execute('''SELECT * FROM example2''')
-    returns = cur.fetchall() #((1,"ID1"), (2, "ID2"), ...)
-
-    printouts = ""
-    for i in returns:
-        printouts +=i+"<br>"
-    return printouts
 
 
 @app.route("/analysis",methods = ["POST", "GET"])
