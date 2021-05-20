@@ -7,7 +7,7 @@ app.config['MYSQL_HOST'] = "localhost"
 app.config['MYSQL_USER'] = "root"
 app.config['MYSQL_PASSWORD'] = "Mysq2021*"
 app.config['MYSQL_DB'] = "analysis"
-#app.config['MYSQL_CURSORCLASS'] = "upload-folder-path"
+#app.config['MYSQL_CURSORCLASS'] = "upload-folder-path"test
 app.config['default_authentication_plugin']="G9NvR4tyGtv1fQhlc8fOmuu4AWCQpwzn"
 
 mysql = MySQL(app)
