@@ -1,13 +1,12 @@
 from flask import Flask, redirect, url_for, request,render_template
-from flask_mysqldb import MySQL
+from flaskext.mysql import MySQL
 
 app = Flask(__name__,template_folder="./")
 
-app.config['MYSQL_HOST'] = "localhost"
-app.config['MYSQL_USER'] = "root"
+app.config['MYSQL_HOST'] = "etap.c95l5puxx9g8.eu-west-3.rds.amazonaws.com"
+app.config['MYSQL_USER'] = "admin"
 app.config['MYSQL_PASSWORD'] = "Mysq2021*"
 app.config['MYSQL_DB'] = "analysis"
-#app.config['MYSQL_CURSORCLASS'] = "upload-folder-path"test
 app.config['default_authentication_plugin']="G9NvR4tyGtv1fQhlc8fOmuu4AWCQpwzn"
 
 mysql = MySQL(app)
@@ -121,10 +120,5 @@ def main():
    return render_template("index.html")
 
 
-@app.route("/analysis",methods = ["POST", "GET"])
-def analysis():
-   return render_template("analysis.html")
-
-
 if __name__ == '__main__':
-   app.run(debug = True)
+   app.run(host="0.0.0.0", port=80)
