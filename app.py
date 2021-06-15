@@ -3,13 +3,18 @@ from flaskext.mysql import MySQL
 
 app = Flask(__name__,template_folder="./")
 
-app.config['MYSQL_HOST'] = "etap.c95l5puxx9g8.eu-west-3.rds.amazonaws.com"
-app.config['MYSQL_USER'] = "admin"
-app.config['MYSQL_PASSWORD'] = "Mysq2021*"
-app.config['MYSQL_DB'] = "analysis"
-app.config['default_authentication_plugin']="G9NvR4tyGtv1fQhlc8fOmuu4AWCQpwzn"
+app.config['MYSQL_DATABASE_HOST']= "etap.c0bcj2cxwcqp.us-east-1.rds.amazonaws.com"
+app.config['MYSQL_DATABASE_USER'] = "admin"
+app.config['MYSQL_DATABASE_PORT'] = 3306
+app.config['MYSQL_DATABASE_PASSWORD'] = "Etap2021*"
+app.config['MYSQL_DATABASE_DB'] = "etap"
 
-mysql = MySQL(app)
+mysql = MySQL()
+mysql.init_app(app)
+connection = mysql.connect()
+connection.autocommit(True)
+cursor = connection.cursor()
+
 
 @app.route("/",methods = ["POST", "GET"])
 def main():
@@ -104,21 +109,18 @@ def main():
       print(_comments)
       print(_feedback)
 
-      cur = mysql.connection.cursor()
-
-      cur.execute("INSERT INTO survey(dispositif, site, debut, fin, statue, branche, fin1, fin2, fin3, fin4,fin5,\
+      cursor.execute("INSERT INTO survey(dispositif, site, debut, fin, statue, branche, fin1, fin2, fin3, fin4,fin5,\
           intType, inter1, inter2, inter3, inter4, intForDis, inter5, intRisqS, intRisqH, intRisqJ, intRisqEn, \
           intRisqEc, preUsager, pre1, pre2, pre3, pre4, pre5, pre6, ben1, ben2, ben3, ben4, ben5, ben6, ben7, comment, proposition) \
           VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s, %s, %s, %s, %s,\
            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",(_dispositif,_site,_debut,_fin, \
             _slct1, _slct2,_fin1, _fin2, _fin3, _fin4, _fin5, _intType, _int1, _int2, _int3, _int4, _forDis,_int5, \
             _risqS, _risqH, _risqJ, _risqEn, _risqEc,_usagers,_pres1, _pres2, _pres3, _pres4, _pres5, _pres6,_ben1, \
-            _ben2, _ben3, _ben4, _ben5, _ben6, _ben7, _comments, _comments));
+            _ben2, _ben3, _ben4, _ben5, _ben6, _ben7, _comments, _feedback));
 
-      mysql.connection.commit()
-      cur.close()
    return render_template("index.html")
 
 
+
 if __name__ == '__main__':
-   app.run(host="0.0.0.0", port=80)
+ app.run(host="0.0.0.0", port=80)

@@ -219,14 +219,14 @@
                 <div class="col-5">
                     <div class="input-group mb-3" style="margin-left:20px";>
                         <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect03">Statue</label>
+                            <label class="input-group-text" for="inputGroupSelect03">Statut</label>
                         </div>
                         <select class="form-control" id="inputGroupSelect03" name="slct1" onchange="populate1('inputGroupSelect03', 'inputGroupSelect04')">
-                            <option value="" selected>Sélectionnez votre Statue</option>
-                            <option value="financeur">Financeur</option>
+                            <option value="" selected>Sélectionnez votre statue</option>
+                            <option value="financeur">Financeur/Cofinanceur</option>
                             <option value="intervenant">Intervenant</option>
                             <option value="prescripteur">Prescripteur</option>
-                            <option value="beneficiaire">Beneficiaire</option>
+                            <option value="beneficiaire">Bénéficiaire</option>
                         </select>
                     </div>
                 </div>
@@ -257,22 +257,22 @@
                 <p id="surSel" name="surveySelection">
                 <div class="alert alert-info" id="botonF" style="display: none;">
                     <span style="font-size: 24px;font-weight: 700;">
-                        Questionnaire de la Financeur
+                        Questionnaire Financeur
                     </span>
                 </div>
                 <div class="alert alert-info" id="botonI" style="display: none;">
                     <span style="font-size: 24px;font-weight: 700;">
-                        Questionnaire de l’Intervenant(e)
+                        Questionnaire Intervenant-e
                     </span>
                 </div>
                 <div class="alert alert-info" id="botonP" style="display: none;">
                     <span style="font-size: 24px;font-weight: 700;">
-                        Questionnaire du Prescripteur
+                        Questionnaire Prescripteur
                     </span>
                 </div>
                 <div class="alert alert-info" id="botonB" style="display: none;">
                     <span style="font-size: 24px;font-weight: 700;">
-                        Questionnaire de la Bénéficiaire
+                        Questionnaire Bénéficiaire
                     </span>
                 </div>
 
@@ -280,10 +280,13 @@
 
                 <br>
 
+
             <div style="text-align:left;margin-left: 70px;margin-top: 30px;">
                 <div id="fin" name="fin" style="display: none;">
-                    <h2>Finaceur questionnaire-Cochez la bonne réponse.</h2>
-                    <h3>Disponibilité et écoute de votre interlocuteur</h3>
+                   
+		 <p>Vous avez financé ou cofinancé une prestation réalisée par L’ÉTAPE.<br>
+
+			<h3>Disponibilité et écoute de votre interlocuteur</h3>
                     <input style="display: none;" type="radio" value="" id="fin10" name="fin1" checked>
                     <input type="radio" value="Très satisfaisant" id="fin11" name="fin1">
                     <label for="fin11">Très satisfaisant</label><br>
@@ -351,8 +354,8 @@
                 </div>
 
                 <div id="int" name="int" style="display: none;margin-left: 20px;">
-                    <h2>Cochez la bonne réponse.</h2>
-                    <h3>Vous êtes intervenant(e):</h3>
+   
+                    <h3>Vous êtes intervenant-e:</h3>
                     <input style="display: none;" type="radio" value="" name="intType" checked>
                     <label for="intEx">extérieur</label>
                     <input type="radio" id="intEx" name="intType" value="extérieur">
@@ -362,7 +365,7 @@
                     <h3>Les objectifs de la formation ont-ils été atteints ?</h3>
                     <input style="display: none;" type="radio" id="int10" value="" name="int1" checked>
                     <input type="radio" id="int11" name="int1" value="Tout a fait">
-                    <label for="int11">Tout a fait</label><br>
+                    <label for="int11">Tout à fait</label><br>
                     <input type="radio" id="int12" name="int1" value="Presque">
                     <label for="int12">Presque</label><br>
                     <input type="radio" id="int13" name="int1" value="Pas vraiment">
@@ -373,7 +376,7 @@
                     <h3>L’équipe a pu aborder l’ensemble des contenus du programme</h3>
                     <input style="display: none;" type="radio" id="int20" value="" name="int2" checked>
                     <input type="radio" id="int21" name="int2" value="Tout a fait">
-                    <label for="int21">Tout a fait</label><br>
+                    <label for="int21">Tout à fait</label><br>
                     <input type="radio" id="int22" name="int2" value="Presque">
                     <label for="int22">Presque</label><br>
                     <input type="radio" id="int23" name="int2" value="Pas vraiment">
@@ -384,7 +387,7 @@
                     <h3>L’équipe a disposé des moyens matériels suffisants pour conduire la prestation</h3>
                     <input style="display: none;" type="radio" id="int30" value="" name="int3" checked>
                     <input type="radio" id="int31" name="int3" value="Tout a fait">
-                    <label for="int31">Tout a fait</label><br>
+                    <label for="int31">Tout à fait</label><br>
                     <input type="radio" id="int32" name="int3" value="Presque">
                     <label for="int32">Presque</label><br>
                     <input type="radio" id="int33" name="int3" value="Pas vraiment">
@@ -395,7 +398,7 @@
                     <h3>L’équipe a eu accès à tous les documents administratifs et pédagogiques pour mener l’action</h3>
                     <input style="display: none;" type="radio" id="int40" value="" name="int4" checked>
                     <input type="radio" id="int41" name="int4" value="Tout a fait">
-                    <label for="int41">Tout a fait</label><br>
+                    <label for="int41">Tout à fait</label><br>
                     <input type="radio" id="int42" name="int4" value="Presque">
                     <label for="int42">Presque</label><br>
                     <input type="radio" id="int43" name="int4" value="Pas vraiment">
@@ -410,7 +413,7 @@
                     <label for="realN">Non</label>
                     <input type="radio" id="realN" name="forDis" value="Non">
 
-                    <h3>Si oui, Votre avis sur la réalisation de tout ou une partie de la prestation en distanciel</h3>
+                    <h3>Si oui, votre avis sur la réalisation de tout ou une partie de la prestation en distanciel</h3>
                     <input style="display: none;" type="radio" id="int50" value="" name="int5" checked>
                     <input type="radio" id="real51" name="int5" value="Très satisfaisant">
                     <label for="real51">Très satisfaisant</label><br>
@@ -427,7 +430,7 @@
                     <label for="risqSY">Oui</label>
                     <input type="radio" id="risqSY" name="risqS" value="Oui">
                     <label for="risqSN">Non</label>
-                    <input type="radio" id="risqSN" name="risqS" value="Non">
+		    <input type="radio" id="risqSN" name="risqS" value="Non">
 
                     <h3>Risques hygiènes et sécurité des locaux (issue de secours, propreté des locaux…)</h3>
                     <input style="display: none;" type="radio" id="risqH" value="" name="risqH" checked>
@@ -461,9 +464,9 @@
                 </div>
 
                 <div id="pre" name="pre" style="display:none;">
+  
 
-                    <label for="presWho" style="text-align: left;"><b>Vous êtes: (merci de choisir la case
-                            correspondante ou ecrire s'il n a pas de choix):</b> <br>
+                    <label for="presWho" style="text-align: left;"><b>Vous êtes</b> <br>
                         <input list="usagers" id="presWho" name="usagers" /></label>
                     <datalist id="usagers">
                         <option value="" selected>Please select</option>
@@ -475,7 +478,6 @@
                         <option value="Cap Emploi">Cap Emploi</option>
                     </datalist>
                     <br>
-                    <h2>Cochez la bonne réponse</h2>
                     <h3>Accès aux informations en amont de la prestation</h3>
                     <input style="display: none;" type="radio" id="pres10" value="" name="pres1" checked>
                     <input type="radio" id="pres11" name="pres1" value="Très satisfaisant">
@@ -559,8 +561,9 @@
 
                 <div id="ben" name="ben" style="display:none;">
 
-                    <h2>Cochez la bonne réponse.</h2>
-                    <h3>Au retour de la prestation / formation;</h3>
+   <p>Vous avez financé ou cofinancé une prestation réalisée par L’ÉTAPE.<br>
+
+		    <h3>Au retour de la prestation / formation;</h3>
                     <h3>La cohérence de cette formation/prestation par rapport à vos besoins?</h3>
                     <input style="display: none;" type="radio" id="ben10" value="" name="ben1" checked>
                     <input type="radio" id="ben11" name="ben1" value="Très satisfaisant">
@@ -662,7 +665,7 @@
 
         <div id="soumettre" style="text-align: right;">
             <hr>
-            <label for="submit" lang="fr">Si vous avez fini cliquez s'il vous plait le button "Soumettre"</label>
+            <label for="submit" lang="fr">Quand vous avez terminé, merci de cliquer sur le bouton"Soumettre"</label>
             <input type="submit" id="submit" value="Soumettre">
         </div>
 
