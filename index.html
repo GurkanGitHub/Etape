@@ -464,19 +464,22 @@
                 </div>
 
                 <div id="pre" name="pre" style="display:none;">
-  
+			
+			<div class ="col-sm-5 input-group mb-3">
+				<div class ="input-group-prepend" style ="margin-left:20px;">
+					<label class ="input-group-text" for="presWho" style="text-align: left;"><b>Vous êtes</b></label>
+				</div>	
+				<select class = "custom-select" id="presWho" name="usagers">
+                    		    	<option value="" selected>Please select</option>
+                        		<option value="Pôle Emploi">Pôle Emploi</option>
+                        		<option value="Conseil départemental 14">Conseil départemental 14</option>
+                        		<option value="Conseil départemental 50">Conseil départemental 50</option>
+                        		<option value="Conseil départemental 61">Conseil départemental 61</option>
+                        		<option value="Mission locale">Mission locale</option>
+                        		<option value="Cap Emploi">Cap Emploi</option>
+				</select>
+			</div>
 
-                    <label for="presWho" style="text-align: left;"><b>Vous êtes</b> <br>
-                        <input list="usagers" id="presWho" name="usagers" /></label>
-                    <datalist id="usagers">
-                        <option value="" selected>Please select</option>
-                        <option value="Pôle Emploi">Pôle Emploi</option>
-                        <option value="Conseil départemental 14">Conseil départemental 14</option>
-                        <option value="Conseil départemental 50">Conseil départemental 50</option>
-                        <option value="Conseil départemental 61">Conseil départemental 61</option>
-                        <option value="Mission locale">Mission locale</option>
-                        <option value="Cap Emploi">Cap Emploi</option>
-                    </datalist>
                     <br>
                     <h3>Accès aux informations en amont de la prestation</h3>
                     <input style="display: none;" type="radio" id="pres10" value="" name="pres1" checked>
