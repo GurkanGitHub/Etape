@@ -124,8 +124,7 @@
                 de prestation</span>
         </div>
     </center>
-    <p>Vous avez financé ou cofinancé une prestation réalisée par L’ÉTAPE.<br>
-        Dans une logique d’amélioration continue, nous vous remercions de bien vouloir remplir ce questionnaire.</p>
+    <p> Dans une logique d’amélioration continue, nous vous remercions de bien vouloir remplir ce questionnaire.</p>
 
 
     <form id="etapeSurvey" action="/" method="POST">
@@ -187,6 +186,8 @@
                     <option value="Mortain">Mortain</option>
                     <option value="Domfront">Domfront</option>
                     <option value="La Ferte-Mace">La Ferte-Mace</option>
+		    <option value ="Autre Lieu Delocalise">Autre Lieu Delocalise</option>
+
                 </select>
 
             </div>
@@ -222,9 +223,9 @@
                             <label class="input-group-text" for="inputGroupSelect03">Statut</label>
                         </div>
                         <select class="form-control" id="inputGroupSelect03" name="slct1" onchange="populate1('inputGroupSelect03', 'inputGroupSelect04')">
-                            <option value="" selected>Sélectionnez votre statue</option>
+                            <option value="" selected>Sélectionnez votre statut</option>
                             <option value="financeur">Financeur/Cofinanceur</option>
-                            <option value="intervenant">Intervenant</option>
+                            <option value="intervenant-e">Intervenant-e</option>
                             <option value="prescripteur">Prescripteur</option>
                             <option value="beneficiaire">Bénéficiaire</option>
                         </select>
@@ -354,7 +355,8 @@
                 </div>
 
                 <div id="int" name="int" style="display: none;margin-left: 20px;">
-   
+    <p>Vous avez animé/coanimé une prestation réalisée par L’ÉTAPE.<br>
+
                     <h3>Vous êtes intervenant-e:</h3>
                     <input style="display: none;" type="radio" value="" name="intType" checked>
                     <label for="intEx">extérieur</label>
@@ -462,21 +464,23 @@
                     <input type="radio" id="risqEcN" name="risqEc" value="Non">
 
                 </div>
-
+		
                 <div id="pre" name="pre" style="display:none;">
-			
+			 <p>Vous avez prescrit une prestation<br>
 			<div class ="col-sm-5 input-group mb-3">
 				<div class ="input-group-prepend" style ="margin-left:20px;">
 					<label class ="input-group-text" for="presWho" style="text-align: left;"><b>Vous êtes</b></label>
 				</div>	
 				<select class = "custom-select" id="presWho" name="usagers">
-                    		    	<option value="" selected>Please select</option>
+                    		    	<option value="" selected>Merci de sélectionner la case correspondanté</option>
                         		<option value="Pôle Emploi">Pôle Emploi</option>
                         		<option value="Conseil départemental 14">Conseil départemental 14</option>
                         		<option value="Conseil départemental 50">Conseil départemental 50</option>
                         		<option value="Conseil départemental 61">Conseil départemental 61</option>
                         		<option value="Mission locale">Mission locale</option>
                         		<option value="Cap Emploi">Cap Emploi</option>
+					<option value="Autre">Autre</option>
+
 				</select>
 			</div>
 
@@ -564,7 +568,7 @@
 
                 <div id="ben" name="ben" style="display:none;">
 
-   <p>Vous avez financé ou cofinancé une prestation réalisée par L’ÉTAPE.<br>
+   <p>Vous avez participé à une prestation réalisée par L’ÉTAPE.<br>
 
 		    <h3>Au retour de la prestation / formation;</h3>
                     <h3>La cohérence de cette formation/prestation par rapport à vos besoins?</h3>
@@ -579,7 +583,7 @@
                     <label for="ben14">Pas du tout satisfaisant</label>
 
 
-                    <h3>2 - La conformité des contenus de cette formation par rapport au descriptif annoncé ?</h3>
+                    <h3>La conformité des contenus de cette formation par rapport au descriptif annoncé ?</h3>
                     <input style="display: none;" type="radio" id="ben20" value="" name="ben2" checked>
                     <input type="radio" id="ben21" name="ben2" value="Très satisfaisant">
                     <label for="ben21">Très satisfaisant</label><br>
@@ -591,7 +595,7 @@
                     <label for="ben24">Pas du tout satisfaisant</label>
 
 
-                    <h3>3 - Les moyens mis à votre disposition étaient-ils satisfaisants ?</h3>
+                    <h3>Les moyens mis à votre disposition étaient-ils satisfaisants ?</h3>
                     <input style="display: none;" type="radio" id="ben30" value="" name="ben3" checked>
                     <input type="radio" id="ben31" name="ben3" value="Très satisfaisant">
                     <label for="ben31">Très satisfaisant</label><br>
@@ -602,7 +606,7 @@
                     <input type="radio" id="ben34" name="ben3" value="Pas du tout satisfaisant">
                     <label for="ben34">Pas du tout satisfaisant</label>
 
-                    <h3>4 - Etes-vous satisfait-e de la fréquence des contacts avec le-la référent-e L’Étape ?</h3>
+                    <h3>Etes-vous satisfait-e de la fréquence des contacts avec le-la référent-e L’Étape ?</h3>
                     <input style="display: none;" type="radio" id="ben40" value="" name="ben4" checked>
                     <input type="radio" id="ben41" name="ben4" value="Très satisfaisant">
                     <label for="ben41">Très satisfaisant</label><br>
@@ -613,7 +617,7 @@
                     <input type="radio" id="ben44" name="ben4" value="Pas du tout satisfaisant">
                     <label for="ben44">Pas du tout satisfaisant</label>
 
-                    <h3>5 - Votre objectif a-t-il été atteint ?</h3>
+                    <h3>Votre objectif a-t-il été atteint ?</h3>
                     <input style="display: none;" type="radio" id="ben50" value="" name="ben5" checked>
                     <input type="radio" id="ben51" name="ben5" value="Très satisfaisant">
                     <label for="ben51">Très satisfaisant</label><br>
@@ -625,7 +629,7 @@
                     <label for="ben54">Pas du tout satisfaisant</label>
 
 
-                    <h3>6 - Etes-vous satisfait-e de l’action mise en place ?</h3>
+                    <h3>Etes-vous satisfait-e de l’action mise en place ?</h3>
                     <input style="display: none;" type="radio" id="ben60" value="" name="ben6" checked>
                     <input type="radio" id="ben61" name="ben6" value="Très satisfaisant">
                     <label for="ben61">Très satisfaisant</label><br>
@@ -636,7 +640,7 @@
                     <input type="radio" id="ben64" name="ben6" value="Pas du tout satisfaisant">
                     <label for="ben64">Pas du tout satisfaisant</label>
 
-                    <h3>7 - Si vous êtes en situation de handicap, votre handicap a-t-il été pris en compte ?</h3>
+                    <h3>Si vous êtes en situation de handicap, votre handicap a-t-il été pris en compte ?</h3>
                     <input style="display: none;" type="radio" id="ben70" value="" name="ben7" checked>
                     <input type="radio" id="ben71" name="ben7" value="Très satisfaisant">
                     <label for="ben71">Très satisfaisant</label><br>
@@ -730,8 +734,8 @@
                 document.getElementById("botonB").style.display = "none";
 
 
-            } else if (s1.value == "intervenant") {
-                var optionArray = ["|", "intervenant|Intervenant", "intervenant_FSE|Intervenant_FSE"];
+            } else if (s1.value == "intervenant-e") {
+                var optionArray = ["|", "intervenant-e|Intervenant-e", "intervenant_FSE|Intervenant_FSE"];
                 document.getElementById("int").style.display = "block"
                 document.getElementById("fin").style.display = "none";
                 document.getElementById("pre").style.display = "none";
