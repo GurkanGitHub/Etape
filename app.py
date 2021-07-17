@@ -3,7 +3,7 @@ from flaskext.mysql import MySQL
 
 app = Flask(__name__,template_folder="./")
 
-app.config['MYSQL_DATABASE_HOST']= "etap.c0bcj2cxwcqp.us-east-1.rds.amazonaws.com"
+app.config['MYSQL_DATABASE_HOST']= "etapdatabase.cfqmqau0w5yf.eu-west-3.rds.amazonaws.com"
 app.config['MYSQL_DATABASE_USER'] = "admin"
 app.config['MYSQL_DATABASE_PORT'] = 3306
 app.config['MYSQL_DATABASE_PASSWORD'] = "Etap2021*"
@@ -15,6 +15,9 @@ connection = mysql.connect()
 connection.autocommit(True)
 cursor = connection.cursor()
 
+@app.route("/thanks", methods = ["POST", "GET"])
+def thanks():
+    return render_template("thankPage.html")
 
 @app.route("/",methods = ["POST", "GET"])
 def main():
@@ -117,7 +120,7 @@ def main():
             _slct1, _slct2,_fin1, _fin2, _fin3, _fin4, _fin5, _intType, _int1, _int2, _int3, _int4, _forDis,_int5, \
             _risqS, _risqH, _risqJ, _risqEn, _risqEc,_usagers,_pres1, _pres2, _pres3, _pres4, _pres5, _pres6,_ben1, \
             _ben2, _ben3, _ben4, _ben5, _ben6, _ben7, _comments, _feedback));
-
+      return redirect("/thanks")
    return render_template("index.html")
 
 
